@@ -1,0 +1,39 @@
+/*global*/
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: arial;
+}
+
+/*header*/
+nav{
+    background-color: blueviolet;
+    color: aqua;
+    height: 20vh;
+    text-align: center;
+}
+.register-form{
+    background-color: aquamarine;
+    width: 50%;
+    margin: 1rem;
+    border-radius: 5px;
+}
+.input-control{
+display: flex;
+justify-content: space-around;
+margin: 1rem;
+align-items: center;
+}
+.input-control input,
+.input-control select{
+    width: 80%;
+}
+
+/* display */
+.card {
+    background: lightgray;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
