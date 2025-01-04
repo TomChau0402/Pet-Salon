@@ -10,7 +10,7 @@ let petSalon ={
     }, 
     phone: "666-666-6666"
 }
-// create constructor
+// create constructor the first letter is capitilized / parameters is the ()
 function Pet(name, age, gender,breed, service) {
     this.name=name;
     this.age=age;
@@ -29,15 +29,31 @@ function register() {
     let newpet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value); //create the new obj
     pets.push(newPet); // push the newPet into the array
     console.log(pets); //display the array
+    displayRow();
+    clearForm();
+}
+function clearForm() {
+    document.getElementById("txtName").value="";
+    document.getElementById("txtAge").value="";
+    document.getElementById("txtGender").value="";
+    document.getElementById("txtBreed").value="";
+    document.getElementById("txtService").value="";
+}
+function deletepet(petId) {
+    console.log("Pet id:", petId);
+    document.getElementById(petId).remove();
+    pets.splice(petId,1);
+    displayRow();
+    displayInfo()
 
 }
 function init(){
 //create 3 pets
-    let pet1 = new Pet("Scooby",60,"male","Dane","grooming");
-    let pet2 = new Pet("Tooby",50,"female","Poodle","hair cut");
-    let pet3 = new Pet("Bobby",80,"male", "Boxer", "grooming");
+    let pet1 = new Pet("Scooby",60,"male","Dane","Grooming");
+    let pet2 = new Pet("Tooby",50,"female","Poodle","Vaccines");
+    let pet3 = new Pet("Bobby",80,"male", "Boxer", "Grooming");
     pets.push(pet1,pet2,pet3);
 
-    displayPets();
+    displayRow();
 }
 window.onload=init; //wait to render the HTML
