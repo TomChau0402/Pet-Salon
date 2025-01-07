@@ -11,12 +11,13 @@ let petSalon ={
     phone: "666-666-6666"
 }
 // create constructor the first letter is capitilized / parameters is the ()
-function Pet(name, age, gender,breed, service) {
+function Pet(name, age, gender,breed, service,type) {
     this.name=name;
     this.age=age;
     this.gender=gender;
     this.breed=breed;
     this.service=service;
+    this.type=type;
 }
 //create the variable for the HTML element
 let inputName = document.getElementById("txtName")
@@ -24,6 +25,7 @@ let inputAge = document.getElementById("txtAge")
 let inputGender = document.getElementById("txtGender")
 let inputBreed = document.getElementById("txtBreed")
 let inputService = document.getElementById("txtService")
+let inputType = document.getElementById("txtType")
 
 function register() {
     let newpet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value); //create the new obj
@@ -38,6 +40,7 @@ function clearForm() {
     document.getElementById("txtGender").value="";
     document.getElementById("txtBreed").value="";
     document.getElementById("txtService").value="";
+    document.getElementById("txtType").value="";
 }
 function deletepet(petId) {
     console.log("Pet id:", petId);
@@ -57,3 +60,24 @@ function init(){
     displayRow();
 }
 window.onload=init; //wait to render the HTML
+function displayRow() {
+    let cardsSection = document.getElementById("pets");
+    let result = "";
+    
+    for (let i = 0; i < pets.length; i++) {
+        let pet = pets[i];
+        result += `
+            <tr id="${i}">
+                <td scope="row">${i + 1}</td>
+                <td>${pet.name}</td>
+                <td>${pet.age}</td>
+                <td>${pet.gender}</td>
+                <td>${pet.breed}</td>
+                <td>${pet.type}</td>
+                <td>${pet.service}</td>
+                <td><button class="btn btn-danger btn-sm" onclick="deletePet(${i})">Delete</button></td>;
+            </tr>
+        `;
+        displayInfo();
+    }
+}

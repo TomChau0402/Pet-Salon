@@ -8,7 +8,7 @@ function displayRow() {
         console.log("pet: ", pet);
         
         result +=`
-        <tr id="${i}>
+        <tr id="${i}">
             <td>${pet.name}</td>
             <td>${pet.age}</td>
             <td>${pet.gender}</td>
