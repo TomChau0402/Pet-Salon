@@ -9,9 +9,10 @@ body{
 
 /*header*/
 .background-image{
-    height: 500px;
+    height: 600px;
     background: url("https://today.usc.edu/wp-content/uploads/2019/11/Taiwan-Blue-Magpie-web-1280x720.jpg");
-    background-position: 300px;
+    position: right;
+    background-size: 200%;
     
 }
 .background-image2{
@@ -42,7 +43,7 @@ h1{
     text-align: center;
     margin: 1rem;
     text-decoration-line: inherit;
-    color:black
+    color:white
 }
 h2{
     text-align: center;
@@ -61,6 +62,16 @@ h2{
     justify-content: space-around;
     margin: 1rem;
     align-items: center;
+    color: blueviolet;
+    font-size: x-large;
+}
+.label{
+    display:flex;
+    justify-content: space-around;
+    margin: 2rem;
+    align-items: right;
+    color: blue;
+    font-size: large;
 }
 .container{
     width: 80%;
@@ -72,8 +83,9 @@ h2{
 .input-control label{
     display: block;
     width: 20%;
-    text-align: left;
+    text-align: center;
     margin-right: 10px;
+    color: blue;
 }
 .btn-container{
     display: flex;
