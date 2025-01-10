@@ -42,13 +42,28 @@ function clearForm() {
     document.getElementById("txtService").value="";
     document.getElementById("txtType").value="";
 }
-function deletepet(petId) {
+function deletePet(petId) {
     console.log("Pet id:", petId);
     document.getElementById(petId).remove();
     pets.splice(petId,1);
     displayRow();
     displayInfo()
 
+}
+function getServices() {
+    console.log("getServices function")
+    
+    let services = read()
+    let option = "";
+    for(let i=0; services.length; i++){
+        let service =services[i];
+
+        option +=
+        `
+        <option value="${service.description}">${service.description} -${service.price}</option>
+        `
+    }
+    $("#txtServices").append(option);
 }
 function init(){
 //create 3 pets
@@ -58,6 +73,7 @@ function init(){
     pets.push(pet1,pet2,pet3);
 
     displayRow();
+    getServices();
 }
 window.onload=init; //wait to render the HTML
 function displayRow() {

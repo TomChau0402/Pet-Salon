@@ -52,6 +52,17 @@ function displayInfo() {
         }
         groomingSpan.innerHTML = groomingCounter;
     }
+function displayTypes() {
+    let dogSpan = document.getElementById("dogTotal");
+    let dogCounter = 0;
 
+    for (let i=0; i<pets.length; i++){
+        console.log("--pet:",pets[i]);
+        if(pets[i].type =="Dog"){
+            dogCounter++; // increase the value by +1
+        }
+    }
+    
+}
     
 }

@@ -37,13 +37,19 @@ function register() {
     console.log("A new service was added");
     let inputDescription = $("#txtDes").val();
     let inputPrice = $("#txtPrice").val();
-    let newService = new Service(inputDescription,inputPrice)
-    if(validService(newService)){;
+    let newService = new Service(inputDescription,inputPrice);
+    if(validService(newService)){
     save(newService); //this fn is on the storeManager
 }
 }
 function init() {
     $("#registerBtn").on("click",register);
+    $("#desRequirementText").hide();
+    $("#priceRequirementText").hide();
 
 }
+//clear the form
+$("#txtDes").val("")
+$("#txtPrice").val("")
+
 window,onload=init;

@@ -21,7 +21,7 @@
 
         </div>
         <div id="petNames" class="petNames">
-            <div class="register-form">
+            <div class="register-form container mx-auto" >
                 <h2> Register a New Pet</h2>
                 <div class="input-control">
                     <label> Name: </label>
@@ -44,32 +44,34 @@
                         <option value="Vaccines"> Vaccines</option>
                     </select>
                 </div>
+                <div class="input-control">
+                    <label> Type: </label>
+                    <select id="txtService" class="form-control" >                
+                        <option value=""> -- Select an option --</option>
+                        <option value="Dog"> Dog </option>
+                        <option value="Cat"> Cat </option>
+                        <option value="Fish"> Fish </option>
+                    </select>
+                </div>
                  <div class="btn-container">
                     <button onclick="register()" class="btn-register"> Register</button>
                  </div>
             </div>
         </div>
-        <div class="input-control">
-            <label>Type:</label>
-            <select id="txtType">
-                <option value="">-- Select an option --</option>
-                <option value="Dog">Dog </option>
-                <option value="Cat">Cat</option>
-                <option value="Fish">Fish</option>
-            </select>
-        </div>
+       
 
 
         </div>
         <hr>
         <h2>Registered Pets</h2>
-        <div>
+        <div class="mx-auto w-25">
+        <div class="counter-container">
             <p class="label"> Total:<span id="total">0</span></p>
-            <p class="label"> Grooming: <span id="gTotal">0</span></p>
-            <p class="label"> Dogs: <span id="dogTotal">0</span></p>
+            <p class="label"> Grooming:<span id="gTotal">0</span></p>
+            <p class="label"> Dogs:<span id="dogTotal">0</span></p>
 
         </div>
-
+    </div>
         <table class="table $table-hover-bg-factor table-success table-striped table-bordered">
             <thead>
                 <tr>
@@ -91,8 +93,9 @@
         <div id="pets" class="container row"></div>-->
     </main>
     
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="./script/register.js"></script>
     <script src="./script/display.js"></script>
+    <script src="./script/storeManager.js"></script>
 </body>
 </html>
