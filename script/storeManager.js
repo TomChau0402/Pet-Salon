@@ -3,7 +3,7 @@ function save(item) {
 
     let data = read();
     data.push(item);
-    let val = JSON.stringify(item);
+    let val = JSON.stringify(data);
     console.log(val); //JSON (string)
 
     localStorage.setItem("services",val);

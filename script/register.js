@@ -28,7 +28,7 @@ let inputService = document.getElementById("txtService")
 let inputType = document.getElementById("txtType")
 
 function register() {
-    let newpet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value); //create the new obj
+    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value); //create the new obj
     pets.push(newPet); // push the newPet into the array
     console.log(pets); //display the array
     displayRow();
@@ -54,16 +54,17 @@ function getServices() {
     console.log("getServices function")
     
     let services = read()
-    let option = "";
+    console.log(services)
+ let option = "";
     for(let i=0; services.length; i++){
         let service =services[i];
 
         option +=
         `
-        <option value="${service.description}">${service.description} -${service.price}</option>
+        <option value=""> -${service.price}</option>
         `
+        $("#txtServices").append(option);
     }
-    $("#txtServices").append(option);
 }
 function init(){
 //create 3 pets
@@ -94,6 +95,6 @@ function displayRow() {
                 <td><button class="btn btn-danger btn-sm" onclick="deletePet(${i})">Delete</button></td>;
             </tr>
         `;
-        displayInfo();
+      
     }
 }

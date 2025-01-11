@@ -52,4 +52,4 @@ function init() {
 $("#txtDes").val("")
 $("#txtPrice").val("")
 
-window,onload=init;
+window.onload=init;
